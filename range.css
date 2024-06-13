@@ -1,0 +1,129 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.inputs-wrp {
+  width: 300px;
+  -webkit-transform: translate(-18px, 3px);
+          transform: translate(-18px, 3px);
+  margin-left: 150px;
+  margin-top: 150px;
+}
+
+.inputs-wrp input[type="range"] {
+  position: relative;
+  cursor: pointer;
+  opacity: 0;
+  width: 103%;
+  -webkit-appearance: none;
+  /* Отключаем ситили для родного ползунка */
+  -moz-appearance: none;
+       appearance: none;
+  /* Отключаем ситили для родного ползунка */
+  -webkit-transform: translateY(10px);
+          transform: translateY(10px);
+  /* Задаем свои стили родному ползунку(увеличиваем его, чтобы корректно кликался)*/
+}
+
+.inputs-wrp input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.inputs-wrp input[type="range"]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.inputs-wrp input:hover + .input-range-btn-fake {
+  -webkit-transition: background .3s;
+  transition: background .3s;
+  background-color: #a24308;
+}
+
+.inputs-wrp input:active + .input-range-btn-fake::after {
+  opacity: 1;
+}
+
+.input-range-wrp {
+  position: relative;
+}
+
+.inp-number {
+  margin-bottom: 20px;
+  outline: none;
+  border: 1px solid #000;
+  height: 40px;
+  width: 100px;
+  border-radius: 5px;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 16px;
+}
+
+.input-range-bg-fake {
+  position: absolute;
+  z-index: 1;
+  height: 7px;
+  width: 100%;
+  background-color: #ffdac3;
+  left: 0;
+  top: 15px;
+  pointer-events: none;
+  border-radius: 10px;
+}
+
+.input-range-color-fake {
+  position: absolute;
+  z-index: 2;
+  height: 7px;
+  background-color: #d5611a;
+  left: 0;
+  top: 15px;
+  pointer-events: none;
+  border-radius: 10px 0 0 10px;
+}
+
+.input-range-btn-fake {
+  position: absolute;
+  z-index: 3;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  left: 0;
+  top: 11px;
+  background-color: #d5611a;
+  cursor: pointer;
+  pointer-events: none;
+  -webkit-transform: translateX(-4px);
+          transform: translateX(-4px);
+}
+
+.input-range-btn-fake::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 25px;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  height: 25px;
+  border-radius: 50%;
+  background-color: #d5621a90;
+  opacity: 0;
+  z-index: 3;
+}
+/*# sourceMappingURL=range.css.map */
